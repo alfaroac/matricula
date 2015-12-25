@@ -2,15 +2,27 @@
 {% block titulo %}
 	Main
 {% endblock titulo %}
+{% block estilos %}
+<style>
+</style>
+{% endblock estilos %}
 {% block contenido %}
 	<h1>Bienvenidos al sistema de matriculas</h1>
         <p>
         	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error modi consequatur reprehenderit suscipit ipsam eum in nostrum corporis similique, tempore, eius nobis esse ipsa itaque recusandae necessitatibus optio iste temporibus.
-        </p>
-        <a href="#" class="btn btn-danger">Cancelar</a>
-        <button class="btn btn-primary">Aceptar</button>
+        </p>		
+		   <a href="{% url 'matricula_app:matricula' %}">
+		      <img src="../../static/fonts/list.png" > Matricular
+		   </a>
+		   <a href="{% url 'perfiles_app:alumno' %}">
+		      <img src="../../static/fonts/boy.png" class="img-circle" > Alumno
+		   </a>
+		   <a href="#" class="circle">
+		      <img src="../../static/fonts/time.png" class="img-circle" > Horarios
+		   </a>
+		   <a href="#" class="circle">
+		      <img src="../../static/fonts/apple.png" class="img-circle" >
+		   </a>
       </div>
-
-
  
 {% endblock contenido %}
