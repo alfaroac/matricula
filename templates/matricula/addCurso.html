@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block titulo %}
+	Crear curso
+{% endblock titulo %}
+{% block contenido %}
+	
+<div class="page-header">
+	<h4>
+		<a href="{% url 'matricula_app:curso'%}" class="btn btn-warning">
+			<span class="glyphicon glyphicon-chevron-left"></span>Regresar
+		</a>
+		<b>Datos del curso a crear</b>
+	</h4>
+</div>
+<div class="page-header">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
+	</form>
+</div>
+{% endblock contenido %}

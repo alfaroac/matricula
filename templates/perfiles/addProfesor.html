@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %}
+	Regitrar profesor
+{% endblock titulo %}
+{% block contenido %}
+<div class="page-header">
+	<h4>
+		<a href="{% url 'perfiles_app:profesor' %}" class="btn btn-warning">
+			<span class="glyphicon glyphicon-chevron-left"></span>Regresar
+		</a>
+		<strong>Datos del profesor</strong>
+	</h4>
+</div>
+<div class="page-header">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
+	</form>
+</div><br>
+{% endblock contenido %}

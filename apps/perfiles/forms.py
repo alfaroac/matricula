@@ -1,8 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Matricula, Curso
-from apps.perfiles.models import Alumno, Encargado
+from .models import Alumno, Encargado, Profesor
 
 
 class AlumnoForm(forms.ModelForm):
@@ -37,17 +36,9 @@ class EncargadoForm(forms.ModelForm):
 		'ocupacion':forms.TextInput(attrs={'class':'form-control'}),
 		}
 		
-class MatriculaForm(forms.ModelForm):
+class ProfesorForm(forms.ModelForm):
 	class Meta:
-		model=Matricula
-		exclude=()
-		widgets={
-		'seccion':forms.TextInput(attrs={'class':'form-control','placeholder':'Ingrese solo una letra mayuscula, "A - Z"'}),
-		'fec_confirma':forms.TextInput(attrs={'class':'form-control','placeholder':'aaaa-mm-dd'}),
-		}
-
-class CursoForm(forms.ModelForm):
-	class Meta:
-		model=Curso
+		model=Profesor
 		exclude=()
 		
+	

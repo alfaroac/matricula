@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block titulo %}
-	Alumno
+	profesor
 {% endblock titulo %}
 {% block contenido %}
 <div class="page-header">
 	<h4>
-		<b>Tienes <span class="label label-warning">{{cantidad}}</span> alumno(s) registrado(s) </b>
-		<a href="{% url 'perfiles_app:addAlumno' %}" class="btn btn-primary pull-right">
+		<b>Tienes <span class="label label-warning">{{cantidad}}</span> profesor(es) registrado(s) </b>
+		<a href="{% url 'perfiles_app:addProfesor' %}" class="btn btn-primary pull-right">
 			<span class="glyphicon glyphicon-plus">Nuevo registro</span>
 		</a>
 	</h4>
@@ -18,26 +18,26 @@
 			<tr>
 				<th>Nombres</th>
 			    <th>Apellidos</th>
-			    <th>Sexo</th>
+			    <th>DNI</th>
 			    <th>Direccion</th>
+			    <th>Especialidad</th>
 			    <th>Telefono</th>
-			    <th>Imagen</th>
-			    <th>Encargado</th>
+			    <th>Fecha Nacimiento</th>
 			    <th>Opciones</th>
 			</tr>
 		</thead>
 		<tbody>
-		{% for alumno in lista %}		
+		{% for profesor in lista %}		
 			<tr>
-				<td>{{alumno.nombres}}</td>
-				<td>{{alumno.apellidos}}</td>
-				<td>{{alumno.sexo}}</td>
-				<td>{{alumno.direccion}}</td>
-				<td>{{alumno.telefono}}</td>
-				<td><img src="{{alumno.imagen.url}}" width="50px" height="50px" style="border-radius:50%" alt=""></td>
-				<td>{{alumno.encargado}}</td>
+				<td>{{profesor.nombres}}</td>
+				<td>{{profesor.apellidos}}</td>
+				<td>{{profesor.dni}}</td>
+				<td>{{profesor.direccion}}</td>
+				<td>{{profesor.especialidad}}</td>
+				<td>{{profesor.telefono}}</td>
+				<td>{{profesor.fecha_nac}}}</td>
 				<td>
-					<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-book"></span> Matricular</a>
+					<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-book"></span></a>
 					<a href="#" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
 					<a href="#" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
 				</td>

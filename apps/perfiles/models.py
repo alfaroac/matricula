@@ -64,7 +64,7 @@ class Profesor(models.Model):
     direccion = models.CharField(max_length=100)
     especialidad = models.CharField(max_length=30)
     telefono = models.CharField(max_length=13)
-    fecha_nac = models.DateTimeField(auto_now=True)
+    fecha_nac = models.DateTimeField(verbose_name='Fecha nacimiento')
     imagen = models.ImageField(upload_to='profesores')  # falta hacer algo
 
     def __str__(self):

@@ -41,7 +41,8 @@
       <a class="active" href="{% url 'matricula_app:main' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
       <a href="#"><span class="glyphicon glyphicon-cog"></span> Services</a> 
       <a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a> 
-      <a href="#"><i class="glyphicon glyphicon-book"></i> Blog</a> </nav>
+      <a href="{% url 'perfiles_app:profesor' %}"><span class="glyphicon glyphicon-user"></span> Profesor</a> 
+      <a href="{% url 'matricula_app:curso' %}"><i class="glyphicon glyphicon-book"></i> Cursos</a> </nav>
       <footer> <a href="{%url 'logout'%}"><i class="glyphicon glyphicon-off"></i> Logout</a> </footer>
     </aside>
     <!--//sidebar-->
