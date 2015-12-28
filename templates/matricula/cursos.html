@@ -32,8 +32,8 @@
 				<td>{{curso.profesor}}</td>
 				<td>
 					<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-book"></span></a>
-					<a href="#" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
-					<a href="#" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
+					<a href="{% url 'matricula_app:updCurso' curso.pk %}" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="{% url 'matricula_app:delCurso' curso.pk %}" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
 				</td>
 			</tr>	
 		{% endfor %}

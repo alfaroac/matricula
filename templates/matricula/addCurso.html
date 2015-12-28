@@ -12,11 +12,23 @@
 		<b>Datos del curso a crear</b>
 	</h4>
 </div>
-<div class="page-header">
+<div>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form.as_p}}
 		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
+		<a><span id="opciones">Más opciones</span></a><br>
+		<a id="opcion1" href="{% url 'perfiles_app:profesor' %}"><span class="glyphicon glyphicon-plus"> Gestionar profesores</span></a>
 	</form>
 </div>
 {% endblock contenido %}
+{% block mijs %}
+	<script>
+	$(document).ready(function(){	    
+	    $("#opcion1").hide();
+	    $("#opciones").click(function(){
+		    $("#opcion1").toggle();
+		});	
+	});
+	</script>
+{% endblock mijs %}

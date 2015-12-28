@@ -8,17 +8,17 @@
 		<a href="{% url 'perfiles_app:alumno' %}" class="btn btn-warning">
 			<span class="glyphicon glyphicon-chevron-left"></span>Regresar
 		</a>
-		<strong>Datos del alumno</strong>
+		<b>Datos del alumno</b>
 	</h4>
 </div>
-<div class="page-header">
+<div>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form.as_p}}
-		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
-		<a href="{% url 'perfiles_app:encargado' %}" class="btn btn-primary pull-right">
-			<span class="glyphicon glyphicon-plus">Registrar apoderado</span>
+		<a href="{% url 'perfiles_app:encargado' %}" >
+			<span class="glyphicon glyphicon-plus">Agregar encargado</span>
 		</a>
+		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
 	</form>
-</div><br>
+</div><br><br><br>
 {% endblock contenido %}

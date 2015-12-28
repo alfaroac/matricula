@@ -56,7 +56,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
-body, html { height: 100%; }
+body, html {
+ height: 100%; 
+  }
 
 strong {
   font-weight: 400;
@@ -104,7 +106,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: #3498DB;
+  background: #0059b3;
   height: 60px;
   line-height: 60px;
   color: #fff;
@@ -128,14 +130,14 @@ header .utils a {
 }
 
 header .utils a {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.9);
   -moz-transition: color 0.3s linear;
   -o-transition: color 0.3s linear;
   -webkit-transition: color 0.3s linear;
   transition: color 0.3s linear;
 }
 
-header .utils a:hover { color: rgba(0, 0, 0, 0.6); }
+header .utils a:hover { color: rgba(255, 150, 0, 0.9); }
 
 header button {
   cursor: pointer;

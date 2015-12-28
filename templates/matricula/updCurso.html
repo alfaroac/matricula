@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+	Actualizar
+{% endblock title %}
+{% block contenido %}
+	<div class="page-header">
+		<h4>
+			<a href="{% url 'matricula_app:curso' %}" class="btn btn-warning">
+				<span class="glyphicon glyphicon-chevron-left"></span>Regresar
+			</a>
+			<b>Actualizar Curso</b>
+		</h4>
+	</div>
+	<div>
+		<form method="POST">{% csrf_token %}
+			{{form.as_p}}
+			 <button type="submit/button" class="btn btn-success pull-right">Guardar cambios<span class="glyphicon glyphicon-chevron-right"></span></button>
+			<a id="opciones"><span class="glyphicon glyphicon-chevron-right"> Más opciones</span></a><br>
+			<a id="opcion1" href="{% url 'perfiles_app:profesor' %}"><span class="glyphicon glyphicon-plus"> Gestionar profesores</span></a><br>
+		</form>
+	</div><br><br><br>
+{% endblock contenido %}
+{% block mijs %}
+	<script>
+	$(document).ready(function(){	    
+	    $("#opcion1").hide();
+	    $("#opciones").click(function(){
+		    $("#opcion1").toggle();
+		});	
+	});
+	</script>
+{% endblock mijs %}

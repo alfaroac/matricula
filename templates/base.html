@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gooey Off-canvas Navigation Demo</title>
+<title>Demo matricula</title>
 <link rel="stylesheet" href="{% static "css/admin-style.css" %}">
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
 {% block estilos %}
@@ -22,10 +22,13 @@
       <h1>Sistema de matriculas</h1>
     </div>
     <div class="utils right"> 
+      <a href="">.</a>
       <a href="{% url 'matricula_app:main' %}" class='alerts'><span class="glyphicon glyphicon-home"></span></a> <i class="sep">&nbsp;</i> 
       <a href="#" class='alerts'><span class="glyphicon glyphicon-grain"></span></a> <i class="sep">&nbsp;</i> 
-      <a href="#"><span class="glyphicon glyphicon-user"></span>{{ user.username|capfirst }}</a> <i class="sep">&nbsp;</i>
+      <a > <b><span class="glyphicon glyphicon-user"> {{ user.username|capfirst }}</span></b></a> <i class="sep">&nbsp;</i>
+      <a >.</a>
       <a href="{%url 'logout'%}"><i class="glyphicon glyphicon-off"></i></a>         
+      <a >.</a>
     </div>
 
   </header>
@@ -40,7 +43,7 @@
       <nav class='site-nav'> 
       <a class="active" href="{% url 'matricula_app:main' %}"><span class="glyphicon glyphicon-home"></span> Home</a>
       <a href="#"><span class="glyphicon glyphicon-cog"></span> Services</a> 
-      <a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a> 
+      <a href="{% url 'perfiles_app:encargado' %}"><span class="glyphicon glyphicon-envelope"></span> Contact/Family</a> 
       <a href="{% url 'perfiles_app:profesor' %}"><span class="glyphicon glyphicon-user"></span> Profesor</a> 
       <a href="{% url 'matricula_app:curso' %}"><i class="glyphicon glyphicon-book"></i> Cursos</a> </nav>
       <footer> <a href="{%url 'logout'%}"><i class="glyphicon glyphicon-off"></i> Logout</a> </footer>
@@ -63,8 +66,9 @@
   <!--//Main Content--> 
 </div>
 <script src="{% static "js/jquery-1.11.3.js" %}"></script> 
+<script src="{% static "js/menu.js" %}"></script>
 <script>
-$(function(){
+  $(function(){
   $("#menu").on("click" , function(){
     $(this).toggleClass("active");
     $("body").toggleClass("nav-open");
@@ -83,7 +87,9 @@ $(function(){
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
+{% block mijs %}
+  
+{% endblock mijs %}
 </body>
 </html>

@@ -12,11 +12,28 @@
 		<b>Datos del alumno a matricular</b>
 	</h4>
 </div>
-<div class="page-header">
+<div>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{form.as_p}}
+		<br>
 		<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
+		<a id="opciones"><span class="glyphicon glyphicon-chevron-right"> Más opciones</span></a><br>
+		<a id="opcion1" href="{% url 'perfiles_app:alumno' %}"><span class="glyphicon glyphicon-plus"> Gestionar alumnos</span></a><br>
+		<a id="opcion2" href="{% url 'matricula_app:curso' %}"><span class="glyphicon glyphicon-plus"> Gestionar cursos</span></a>
 	</form>
 </div>
 {% endblock contenido %}
+
+{% block mijs %}
+	<script>
+	$(document).ready(function(){	    
+	    $("#opcion1").hide();
+	    $("#opcion2").hide();
+	    $("#opciones").click(function(){
+		    $("#opcion1").toggle();
+		    $("#opcion2").toggle();
+		});	
+	});
+	</script>
+{% endblock mijs %}

@@ -38,8 +38,8 @@
 				<td>{{profesor.fecha_nac}}}</td>
 				<td>
 					<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-book"></span></a>
-					<a href="#" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
-					<a href="#" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
+					<a href="{% url 'perfiles_app:updProfesor' profesor.pk %}" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="{% url 'perfiles_app:delProfesor' profesor.pk%}" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
 				</td>
 			</tr>	
 		{% endfor %}
